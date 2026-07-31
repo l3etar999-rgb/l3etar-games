@@ -12,9 +12,7 @@
 
 </head>
 
-
 <body>
-
 
 <header>
 
@@ -24,81 +22,47 @@
 
 </header>
 
-
-
 <main>
-
 
 <div class="board">
 
-
 <h2>🌍 KHMEN DOWLA</h2>
-
 
 <p>
 Wa7ed kaychof dawla, lba9iyn kaytswlo hta y3rfoha 😎
 </p>
 
-
-
 <button onclick="createRoom()">
 ➕ Sawb Room
 </button>
-
 
 <button onclick="showJoin()">
 🔑 Dkhel Room
 </button>
 
-
-
 <br><br>
-
-
 
 <div id="roomArea"></div>
 
-
-
 <br>
-
-
 
 <button id="start">
 🎮 Bda L3ba
 </button>
 
-
-
-<div id="game">
+<div id="game"></div>
 
 </div>
-
-
-
-</div>
-
-
-
 
 <a href="khmen.html">
-
 <button class="back">
 ⬅ Rja3 L Categories
 </button>
-
 </a>
-
-
 
 </main>
 
-
-
-
-
 <script>
-
 
 const dowal = [
 
@@ -123,17 +87,11 @@ const dowal = [
 
 ];
 
-
-
 const game = document.getElementById("game");
-
-
 
 document.getElementById("start").onclick = function(){
 
-
 let random = dowal[Math.floor(Math.random()*dowal.length)];
-
 
 game.innerHTML = `
 
@@ -141,36 +99,32 @@ game.innerHTML = `
 
 <p>الدولة هي:</p>
 
-
 <div class="room-code">
-
 ${random}
-
 </div>
-
 
 <p>
 خلي صحابك يسولوك حتى يلقاوها 🔥
 </p>
 
-
 <button onclick="location.reload()">
 🔄 دولة جديدة
 </button>
-
 
 `;
 
 };
 
-
 </script>
 
+<!-- Supabase -->
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 
+<!-- اتصال Supabase -->
+<script src="supabase.js"></script>
 
+<!-- اللعبة -->
 <script src="room.js"></script>
 
-
 </body>
-
 </html>
