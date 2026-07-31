@@ -98,3 +98,26 @@ button{
 }
 
 }
+.room-code{
+
+margin:25px auto;
+
+width:220px;
+
+padding:18px;
+
+font-size:38px;
+
+font-weight:bold;
+
+letter-spacing:8px;
+
+border-radius:15px;
+
+background:#100b18;
+
+border:2px solid #a020f0;
+
+box-shadow:0 0 20px rgba(160,32,240,.4);
+
+}
