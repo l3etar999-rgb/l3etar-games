@@ -1,1 +1,100 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Arial,sans-serif;
+}
 
+body{
+    background:
+    radial-gradient(circle at top left,rgba(130,20,120,.35),transparent 35%),
+    radial-gradient(circle at bottom right,rgba(220,20,50,.28),transparent 35%),
+    #09070f;
+    color:white;
+    text-align:center;
+    min-height:100vh;
+}
+
+header{
+    padding:30px;
+    background:#130d1f;
+    border-bottom:1px solid #7b1fa2;
+}
+
+header h1{
+    font-size:42px;
+    text-shadow:0 0 20px #a020f0;
+}
+
+header p{
+    margin-top:10px;
+    color:#bbb;
+}
+
+main{
+    padding:60px 20px;
+}
+
+.menu{
+    display:flex;
+    justify-content:center;
+    gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:40px;
+}
+
+button{
+    padding:15px 30px;
+    border:none;
+    border-radius:12px;
+    cursor:pointer;
+    font-size:18px;
+    font-weight:bold;
+    color:white;
+    background:linear-gradient(135deg,#7b1fa2,#d41445);
+    transition:.3s;
+}
+
+button:hover{
+    transform:translateY(-5px);
+    box-shadow:0 0 20px #a020f0;
+}
+
+.board{
+    max-width:900px;
+    margin:auto;
+    background:#171122;
+    border:1px solid #7b1fa2;
+    border-radius:20px;
+    padding:40px;
+}
+
+.board h2{
+    margin-bottom:15px;
+    font-size:35px;
+}
+
+.board p{
+    color:#bbb;
+    margin-bottom:20px;
+}
+
+.back{
+    margin-top:40px;
+}
+
+@media(max-width:700px){
+
+.menu{
+    flex-direction:column;
+}
+
+button{
+    width:100%;
+}
+
+.board{
+    padding:25px;
+}
+
+}
