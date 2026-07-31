@@ -1,60 +1,103 @@
 const board = document.querySelector(".board");
 
-document.getElementById("createRoom").addEventListener("click", createRoom);
-document.getElementById("joinRoom").addEventListener("click", joinRoom);
+document.getElementById("createRoom").onclick = createRoom;
+document.getElementById("joinRoom").onclick = joinRoom;
+
+let currentWords = [];
+
+
+const words = [
+"دار","زنقة","حانوت","قهوة","أتاي","خبز","طاجين","كسكس",
+"حريرة","مسمن","بغرير","سوق","جامع","مدرسة","جامعة",
+"طوموبيل","طاكسي","طوبيس","مطار","بحر","جبل","واد",
+"شمس","قمر","نجمة","ليل","نهار","شتا","برد",
+"ديسكورد","سيرفر","بوت","شات","كيبورد","ماوس",
+"بلايستيشن","بيسي","لعبة","ستريم","يوتوب",
+"كورة","هدف","لاعب","مدرب","ملعب","جمهور",
+"قط","كلب","حصان","حوت","طير","أسد",
+"كتاب","قلم","مكتب","كرسي","سبورة",
+"موسيقى","فيلم","تصويرة","كاميرا",
+"بيتزا","كسرة","فواكه","تفاح","برتقال"
+];
+
+
+function randomWords(){
+
+let copy=[...words];
+let result=[];
+
+while(result.length < 25){
+
+let i=Math.floor(Math.random()*copy.length);
+
+result.push(copy[i]);
+
+copy.splice(i,1);
+
+}
+
+return result;
+
+}
+
 
 
 function createRoom(){
 
-    const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+let chars="ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
+let code="";
 
-    let code = "";
-
-    for(let i = 0; i < 5; i++){
-        code += chars[Math.floor(Math.random()*chars.length)];
-    }
-
-
-    board.innerHTML = `
-
-    <h2>🎉 Room Tsawbat</h2>
-
-    <p>Sift had code l s7abek:</p>
-
-    <div class="room-code">
-        ${code}
-    </div>
+for(let i=0;i<5;i++){
+code+=chars[Math.floor(Math.random()*chars.length)];
+}
 
 
-    <button id="copyBtn">
-        📋 Copy Code
-    </button>
+board.innerHTML=`
+
+<h2>🎉 الروم تصايبات</h2>
+
+<p>صيفط هاد الكود لصحابك:</p>
+
+<div class="room-code">${code}</div>
+
+<button id="copyBtn">📋 كوبي الكود</button>
+
+<button id="startBtn">🎮 بدا اللعب</button>
+
+`;
 
 
-    <br><br>
+copyBtn.onclick=()=>{
+
+navigator.clipboard.writeText(code);
+
+alert("تنسخ الكود ✅");
+
+};
 
 
-    <button id="startBtn">
-        🎮 Bda L3ba
-    </button>
 
-    `;
+startBtn.onclick=()=>{
 
+currentWords=randomWords();
 
-    document.getElementById("copyBtn").onclick = ()=>{
+board.innerHTML=`
 
-        navigator.clipboard.writeText(code);
+<h2>🔥 Code Names</h2>
 
-        alert("Code tcopya ✅");
+<div class="words">
 
-    };
+${currentWords.map(w=>`
 
+<div class="word">${w}</div>
 
-    document.getElementById("startBtn").onclick = ()=>{
+`).join("")}
 
-        startGame();
+</div>
 
-    };
+`;
+
+};
 
 }
 
@@ -62,67 +105,28 @@ function createRoom(){
 
 function joinRoom(){
 
-    const code = prompt("Dkhel Code:");
-
-    if(!code) return;
+let code=prompt("دخل كود الروم (5 حروف):");
 
 
-    board.innerHTML = `
+if(!code || code.length!==5){
 
-    <h2>✅ Rak Dkhelti</h2>
+alert("دخل كود صحيح");
 
-    <p>Room:</p>
-
-    <div class="room-code">
-        ${code.toUpperCase()}
-    </div>
-
-    <p>Tsna host ybda l3ba 🎮</p>
-
-    `;
+return;
 
 }
 
 
+board.innerHTML=`
 
+<h2>✅ دخلتي للروم</h2>
 
-function startGame(){
+<p>الكود:</p>
 
-    let gameWords = getRandomWords(25);
+<div class="room-code">${code.toUpperCase()}</div>
 
+<p>تسنى مول الروم يبدا اللعب 🎮</p>
 
-    let html = `
-
-    <h2>🎮 Code Names</h2>
-
-    <div class="game-board">
-
-    `;
-
-
-    gameWords.forEach(word=>{
-
-        html += `
-
-        <div class="word-card">
-
-            ${word}
-
-        </div>
-
-        `;
-
-    });
-
-
-
-    html += `
-
-    </div>
-
-    `;
-
-
-    board.innerHTML = html;
+`;
 
 }
