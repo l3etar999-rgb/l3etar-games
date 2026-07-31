@@ -46,13 +46,21 @@ Wa7ed kaychof dawla, lba9iyn kaytswlo hta y3rfoha 😎
 </button>
 
 
-<button onclick="joinRoom()">
+<button onclick="showJoin()">
 🔑 Dkhel Room
 </button>
 
 
 
 <br><br>
+
+
+
+<div id="roomArea"></div>
+
+
+
+<br>
 
 
 
@@ -127,7 +135,6 @@ document.getElementById("start").onclick = function(){
 let random = dowal[Math.floor(Math.random()*dowal.length)];
 
 
-
 game.innerHTML = `
 
 <h2>🤫 خليها سر</h2>
@@ -153,7 +160,6 @@ ${random}
 
 
 `;
-
 
 };
 
