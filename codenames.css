@@ -6,34 +6,41 @@
 }
 
 body{
+    min-height:100vh;
     background:
     radial-gradient(circle at top left,rgba(130,20,120,.35),transparent 35%),
     radial-gradient(circle at bottom right,rgba(220,20,50,.28),transparent 35%),
     #09070f;
     color:white;
     text-align:center;
-    min-height:100vh;
 }
 
+
 header{
-    padding:30px;
+    padding:35px;
     background:#130d1f;
     border-bottom:1px solid #7b1fa2;
 }
 
+
 header h1{
     font-size:42px;
-    text-shadow:0 0 20px #a020f0;
+    text-shadow:
+    0 0 10px #a020f0,
+    0 0 25px #d41445;
 }
+
 
 header p{
     margin-top:10px;
     color:#bbb;
 }
 
+
 main{
     padding:60px 20px;
 }
+
 
 .menu{
     display:flex;
@@ -43,6 +50,7 @@ main{
     margin-bottom:40px;
 }
 
+
 button{
     padding:15px 30px;
     border:none;
@@ -51,110 +59,128 @@ button{
     font-size:18px;
     font-weight:bold;
     color:white;
-    background:linear-gradient(135deg,#7b1fa2,#d41445);
+
+    background:linear-gradient(
+    135deg,
+    #8e24aa,
+    #d41445
+    );
+
     transition:.3s;
 }
 
+
 button:hover{
     transform:translateY(-5px);
-    box-shadow:0 0 20px #a020f0;
+
+    box-shadow:
+    0 0 20px #a020f0,
+    0 0 35px #d41445;
 }
 
+
+
 .board{
+
     max-width:900px;
     margin:auto;
-    background:#171122;
-    border:1px solid #7b1fa2;
-    border-radius:20px;
+
     padding:40px;
+
+    background:#171122;
+
+    border-radius:20px;
+
+    border:1px solid #a020f0;
+
+    box-shadow:
+    0 0 25px rgba(160,32,240,.25);
+
 }
+
+
 
 .board h2{
-    margin-bottom:15px;
+
     font-size:35px;
+    margin-bottom:15px;
+
 }
+
+
 
 .board p{
+
     color:#bbb;
-    margin-bottom:20px;
-}
-
-.back{
-    margin-top:40px;
-}
-
-@media(max-width:700px){
-
-.menu{
-    flex-direction:column;
-}
-
-button{
-    width:100%;
-}
-
-.board{
-    padding:25px;
-}
+    font-size:18px;
 
 }
+
+
+
 .room-code{
 
-margin:25px auto;
+    margin:25px auto;
 
-width:220px;
+    width:220px;
 
-padding:18px;
+    padding:18px;
 
-font-size:38px;
+    font-size:38px;
 
-font-weight:bold;
+    font-weight:bold;
 
-letter-spacing:8px;
+    letter-spacing:8px;
 
-border-radius:15px;
+    border-radius:15px;
 
-background:#100b18;
+    background:#100b18;
 
-border:2px solid #a020f0;
+    border:2px solid #a020f0;
 
-box-shadow:0 0 20px rgba(160,32,240,.4);
+    box-shadow:
+    0 0 20px rgba(160,32,240,.4);
 
 }
-.game-board{
+
+
+
+/* كلمات اللعبة */
+
+.words{
 
     display:grid;
     grid-template-columns:repeat(5,1fr);
-    gap:12px;
+    gap:15px;
     margin-top:30px;
 
 }
 
 
-.word-card{
 
-    background:#251b35;
+.word{
 
-    padding:25px 10px;
+    background:#241a35;
+
+    border:1px solid #a020f0;
+
+    padding:20px;
 
     border-radius:12px;
 
-    border:1px solid #7b1fa2;
-
-    font-size:20px;
+    font-size:22px;
 
     font-weight:bold;
-
-    cursor:pointer;
 
     transition:.3s;
 
 }
 
 
-.word-card:hover{
 
-    transform:scale(1.05);
+.word:hover{
+
+    transform:translateY(-5px);
 
     box-shadow:
     0 0 15px #a020f0;
@@ -162,21 +188,42 @@ box-shadow:0 0 20px rgba(160,32,240,.4);
 }
 
 
+
+.back{
+
+    margin-top:40px;
+
+}
+
+
+
 @media(max-width:700px){
 
-    .game-board{
+.menu{
 
-        grid-template-columns:repeat(3,1fr);
+    flex-direction:column;
 
-    }
+}
 
 
-    .word-card{
+button{
 
-        font-size:16px;
+    width:100%;
 
-        padding:20px 5px;
+}
 
-    }
+
+.board{
+
+    padding:25px 15px;
+
+}
+
+
+.words{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
 
 }
