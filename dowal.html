@@ -36,7 +36,7 @@
 
 
 <p>
-Sift lcode l s7abek w bda tswel bach y3rf chno 3ndk.
+Wa7ed kaychof dawla, lba9iyn kaytswlo hta y3rfoha 😎
 </p>
 
 
@@ -45,9 +45,11 @@ Sift lcode l s7abek w bda tswel bach y3rf chno 3ndk.
 </button>
 
 
+
 <div id="game">
 
 </div>
+
 
 
 </div>
@@ -68,7 +70,77 @@ Sift lcode l s7abek w bda tswel bach y3rf chno 3ndk.
 
 
 
-<script src="dowal.js"></script>
+<script>
+
+const dowal = [
+
+"🇲🇦 المغرب",
+"🇩🇿 الجزائر",
+"🇫🇷 فرنسا",
+"🇪🇸 إسبانيا",
+"🇺🇸 أمريكا",
+"🇧🇷 البرازيل",
+"🇯🇵 اليابان",
+"🇨🇦 كندا",
+"🇩🇪 ألمانيا",
+"🇮🇹 إيطاليا",
+"🇹🇷 تركيا",
+"🇬🇧 إنجلترا",
+"🇰🇷 كوريا الجنوبية",
+"🇦🇷 الأرجنتين",
+"🇵🇹 البرتغال",
+"🇸🇦 السعودية",
+"🇪🇬 مصر",
+"🇲🇽 المكسيك"
+
+];
+
+
+const game = document.getElementById("game");
+
+
+document.getElementById("start").onclick = function(){
+
+
+let random = dowal[Math.floor(Math.random()*dowal.length)];
+
+
+game.innerHTML = `
+
+<h2>🤫 خليها سر</h2>
+
+<p>الدولة هي:</p>
+
+
+<div class="room-code">
+
+${random}
+
+</div>
+
+
+<p>
+خلي صحابك يسولوك:
+<br>
+واش فـ إفريقيا؟ واش كبيرة؟ واش عندها كأس العالم؟
+<br>
+حتى يلقاوها 🔥
+</p>
+
+
+<button onclick="location.reload()">
+🔄 دولة جديدة
+</button>
+
+
+`;
+
+
+};
+
+
+</script>
+
 
 
 </body>
