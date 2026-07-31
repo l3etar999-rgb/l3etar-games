@@ -1,136 +1,56 @@
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial,sans-serif;
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-body{
-background:
-radial-gradient(circle at top left,#42145d55,transparent 40%),
-radial-gradient(circle at bottom right,#d4144555,transparent 40%),
-#09070f;
+<title>Code Names</title>
 
-color:white;
-min-height:100vh;
-text-align:center;
-}
+<link rel="stylesheet" href="codenames.css">
 
-header{
-padding:35px;
-background:#120d1d;
-border-bottom:1px solid #7b1fa2;
-}
+</head>
 
-header h1{
-font-size:42px;
-text-shadow:0 0 20px #a020f0;
-}
+<body>
 
-header p{
-margin-top:10px;
-color:#bbb;
-}
+<header>
 
-main{
-padding:50px 20px;
-}
+<h1>🕵️ Code Names</h1>
 
-.menu{
-display:flex;
-justify-content:center;
-gap:20px;
-margin-bottom:40px;
-flex-wrap:wrap;
-}
+<p>Khmen lklmat m3a team dyalek.</p>
 
-button{
-padding:15px 30px;
-border:none;
-border-radius:12px;
-cursor:pointer;
-font-size:18px;
-font-weight:bold;
-color:white;
+</header>
 
-background:
-linear-gradient(
-135deg,
-#8e24aa,
-#d41445
-);
+<main>
 
-transition:.3s;
-}
+<div class="menu">
 
-button:hover{
+<button id="createRoom">
+➕ Sawb Room
+</button>
 
-transform:translateY(-4px);
+<button id="joinRoom">
+🔑 Dkhel Room
+</button>
 
-box-shadow:
-0 0 20px #a020f0,
-0 0 35px #d41445;
+</div>
 
-}
+<div class="board">
 
-.board{
+<h2>Mar7ba bik 👋</h2>
 
-max-width:900px;
+<p>Ikhtar wa7ed l option fo9.</p>
 
-margin:auto;
+</div>
 
-padding:50px;
+<a href="index.html">
+<button class="back">
+⬅ Rja3 L Home
+</button>
+</a>
 
-background:#181321;
+</main>
 
-border-radius:20px;
+<script src="codenames.js"></script>
 
-border:1px solid #7b1fa2;
-
-}
-
-.board h2{
-
-font-size:34px;
-
-margin-bottom:20px;
-
-}
-
-.board p{
-
-color:#bbb;
-
-font-size:18px;
-
-}
-
-.back{
-
-margin-top:40px;
-
-width:250px;
-
-}
-
-@media(max-width:700px){
-
-.menu{
-
-flex-direction:column;
-
-}
-
-button{
-
-width:100%;
-
-}
-
-.board{
-
-padding:30px 20px;
-
-}
-
-}
+</body>
+</html>
