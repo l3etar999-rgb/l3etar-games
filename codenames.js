@@ -1,33 +1,61 @@
-document.getElementById("createRoom").addEventListener("click", () => {
+const board = document.querySelector(".board");
 
-const code = Math.random().toString(36).substring(2,7).toUpperCase();
+document.getElementById("createRoom").addEventListener("click", createRoom);
+document.getElementById("joinRoom").addEventListener("click", joinRoom);
 
-document.querySelector(".board").innerHTML = `
-<h2>🎉 Room Tsawbat!</h2>
+function createRoom() {
 
-<p>Code dyalk:</p>
+    const chars = "ABCDEFGHJKLMNPQRSTUVWXYZ23456789";
 
-<h1 style="font-size:55px;color:#d41445;">${code}</h1>
+    let code = "";
 
-<p>Sift had code l s7abek.</p>
-`;
+    for (let i = 0; i < 5; i++) {
+        code += chars[Math.floor(Math.random() * chars.length)];
+    }
 
-});
+    board.innerHTML = `
+        <h2>🎉 Room Tsawbat</h2>
 
-document.getElementById("joinRoom").addEventListener("click", () => {
+        <p>Sift had code l s7abek:</p>
 
-const code = prompt("Dkhel Code:");
+        <div class="room-code">${code}</div>
 
-if(!code) return;
+        <button id="copyBtn">📋 Copy Code</button>
 
-document.querySelector(".board").innerHTML = `
-<h2>🚪 Rak dkhelti</h2>
+        <br><br>
 
-<p>Room:</p>
+        <button id="startBtn">🎮 Bda L3ba</button>
+    `;
 
-<h1 style="font-size:55px;color:#8e24aa;">
-${code.toUpperCase()}
-</h1>
-`;
+    document.getElementById("copyBtn").onclick = () => {
+        navigator.clipboard.writeText(code);
+        alert("Code tcopya!");
+    };
 
-});
+    document.getElementById("startBtn").onclick = () => {
+        board.innerHTML = `
+            <h2>🚧 L3ba mazal katsawb...</h2>
+
+            <p>F lmar7ala jaya ghadi yban Board dyal Code Names.</p>
+        `;
+    };
+
+}
+
+function joinRoom() {
+
+    const code = prompt("Dkhel Code:");
+
+    if (!code) return;
+
+    board.innerHTML = `
+        <h2>✅ Rak Dkhelti</h2>
+
+        <p>Room:</p>
+
+        <div class="room-code">${code.toUpperCase()}</div>
+
+        <p>Tsna Host ybda l3ba.</p>
+    `;
+
+}
