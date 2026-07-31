@@ -121,3 +121,62 @@ border:2px solid #a020f0;
 box-shadow:0 0 20px rgba(160,32,240,.4);
 
 }
+.game-board{
+
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:12px;
+    margin-top:30px;
+
+}
+
+
+.word-card{
+
+    background:#251b35;
+
+    padding:25px 10px;
+
+    border-radius:12px;
+
+    border:1px solid #7b1fa2;
+
+    font-size:20px;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:.3s;
+
+}
+
+
+.word-card:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 15px #a020f0;
+
+}
+
+
+@media(max-width:700px){
+
+    .game-board{
+
+        grid-template-columns:repeat(3,1fr);
+
+    }
+
+
+    .word-card{
+
+        font-size:16px;
+
+        padding:20px 5px;
+
+    }
+
+}
