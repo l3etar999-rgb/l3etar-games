@@ -40,6 +40,22 @@ Wa7ed kaychof dawla, lba9iyn kaytswlo hta y3rfoha 😎
 </p>
 
 
+
+<button onclick="createRoom()">
+➕ Sawb Room
+</button>
+
+
+<button onclick="joinRoom()">
+🔑 Dkhel Room
+</button>
+
+
+
+<br><br>
+
+
+
 <button id="start">
 🎮 Bda L3ba
 </button>
@@ -53,6 +69,7 @@ Wa7ed kaychof dawla, lba9iyn kaytswlo hta y3rfoha 😎
 
 
 </div>
+
 
 
 
@@ -70,7 +87,10 @@ Wa7ed kaychof dawla, lba9iyn kaytswlo hta y3rfoha 😎
 
 
 
+
+
 <script>
+
 
 const dowal = [
 
@@ -96,13 +116,16 @@ const dowal = [
 ];
 
 
+
 const game = document.getElementById("game");
+
 
 
 document.getElementById("start").onclick = function(){
 
 
 let random = dowal[Math.floor(Math.random()*dowal.length)];
+
 
 
 game.innerHTML = `
@@ -120,11 +143,7 @@ ${random}
 
 
 <p>
-خلي صحابك يسولوك:
-<br>
-واش فـ إفريقيا؟ واش كبيرة؟ واش عندها كأس العالم؟
-<br>
-حتى يلقاوها 🔥
+خلي صحابك يسولوك حتى يلقاوها 🔥
 </p>
 
 
@@ -141,6 +160,9 @@ ${random}
 
 </script>
 
+
+
+<script src="room.js"></script>
 
 
 </body>
